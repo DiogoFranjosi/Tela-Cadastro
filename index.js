@@ -60,7 +60,7 @@ function validateForm(event) {
     const senha = document.getElementById("password").value;
 
     // Enviando os dados para o servidor
-    fetch("http://localhost:3000/cadastrar", {
+    fetch("https://tela-cadastro.onrender.com", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
