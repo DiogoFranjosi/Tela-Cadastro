@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -16,10 +16,10 @@ const sqlConfig = {
     user: 'usuario_web',        
     password: 'senha123',       
     database: 'CadastroDB',     
-    server: 'localhost',
-    port: 1433,
+    server: '0.tcp.sa.ngrok.io',      
+    port: 11345,                      
     options: {
-        encrypt: false,
+        encrypt: true,
         trustServerCertificate: true
     }
 };
@@ -49,5 +49,5 @@ app.post('/cadastrar', async (req, res) => {
 
 // Inicializa o servidor
 app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
