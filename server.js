@@ -25,7 +25,7 @@ const sqlConfig = {
 };
 
 // Rota para receber os dados do formulário
-app.post('/cadastrar', async (req, res) => {
+app.post('/cadastro', async (req, res) => {
     const { nome, email, telefone, senha } = req.body;
 
     try {
