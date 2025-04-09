@@ -60,7 +60,7 @@ function validateForm(event) {
     const senha = document.getElementById("password").value;
 
     // Enviando os dados para o servidor
-    fetch("https://tela-cadastro.onrender.com", {
+    fetch("https://tela-cadastro.onrender.com/cadastro", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -70,11 +70,10 @@ function validateForm(event) {
     .then(response => response.text())
     .then(data => {
         console.log("Resposta do servidor:", data);
-        showPopup(); // Exibe o popup de sucesso
+        showPopup(); // ou outro feedback visual
     })
     .catch(error => {
         console.error("Erro ao enviar dados:", error);
-        alert("Erro ao cadastrar usuário. Verifique o console.");
     });
 
     return true;
