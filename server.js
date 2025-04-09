@@ -16,8 +16,8 @@ const sqlConfig = {
     user: 'usuario_web',        
     password: 'senha123',       
     database: 'CadastroDB',     
-    server: '0.tcp.sa.ngrok.io',      
-    port: 11345,                      
+    server: '0.tcp.sa.ngrok.io',  
+    port: 10041,                      
     options: {
         encrypt: true,
         trustServerCertificate: true
