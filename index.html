@@ -18,10 +18,10 @@
                         <h1>Cadastre-se</h1>
                     </div>
                     <div class="login-button">
-                        <button onclick="pressEffect(this)"> <a href="#">Entrar</a></button>
+                        <button type="button" onclick="pressEffect(this)">Entrar</button>
                     </div>
                 </div>
-                
+
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Primeiro nome</label>
@@ -49,8 +49,8 @@
                     </div>
 
                     <div class="input-box">
-                        <label for="confirmepassword">confirme sua senha</label>
-                        <input id="confirmepassword" type="password" name="confirmepassword" placeholder="Digite seu sobrenome" required>
+                        <label for="confirmepassword">Confirme sua senha</label>
+                        <input id="confirmepassword" type="password" name="confirmepassword" placeholder="Digite sua senha novamente" required>
                     </div>
                 </div>
 
@@ -61,7 +61,7 @@
 
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input type="radio" id="female" name="gender">
+                            <input type="radio" id="female" name="gender" value="Feminino">
                             <label for="female">Feminino</label>
                         </div>
 
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="continue-button">
-                    <button> <a href="#">Cadastrar</a></button>
+                    <button type="submit">Cadastrar</button>
                 </div>
             </form>
         </div>
