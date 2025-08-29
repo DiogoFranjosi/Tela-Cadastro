@@ -6,6 +6,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+:root {
+  font-size: 16px;
+}
+
 body {
     width: 100%;
     height: 100vh;
@@ -62,22 +66,42 @@ body {
 }
 
 .form-header {
-    margin-bottom: 3rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start; 
+    margin-bottom: 2rem;
+}
+
+.form-header .title h1 {
+    position: relative; 
+    margin: 0;
+}
+
+.form-header .title h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #6c63ff;
+    margin-top: 0.5rem;
+    border-radius: 10px;
 }
 
 .login-button {
-    display: flex;
-    align-items: center;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
 }
 
 .login-button button {
+    display: inline-block;
     border: none;
     background-color: #6c63ff;
-    padding: 0.4rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 500;
+    color: #fff;
 }
 
 .login-button button:hover {
@@ -86,8 +110,8 @@ body {
 
 .login-button button a {
     text-decoration: none;
-    font-weight: 500;
     color: #fff;
+    display: block;
 }
 
 .form-header h1::after {
@@ -105,7 +129,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem 0; 
 }
 
 .input-box {
@@ -197,12 +221,15 @@ body {
 
 .continue-button button {
     width: 100%;
-    margin-top: 2.5rem;
-    border: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
     background-color: #6c63ff;
-    padding: 0.62rem;
+    padding: 0.8rem;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .continue-button button:hover {
@@ -291,41 +318,76 @@ body {
     background: #45a049;
 }
 
-@media screen and (max-width: 1330px) {
-    .form-image {
-        display: none;
-    }
-    .container {
-        width: 50%;
-    }
-    .form {
-        width: 100%;
-    }
+.gender-inputs {
+    margin-bottom: 1.2rem;
 }
 
-@media screen and (max-width: 1064px) {
-    .container {
-        width: 90%;
-        height: auto;
-    }
-    .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-    }
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-    .gender-group {
-        flex-direction: column;
-    }
-    .gender-title h6 {
-        margin: 0;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
-    }
+/* — Até 1330px: layout “laptop grande” de 1330px até 894px */
+@media screen and (max-width: 1330px) {
+  .form-image {
+    display: none;
+  }
+  .container {
+    width: 50%;
+  }
+  .form {
+    width: 100%;
+  }
+}
+
+/* — Até 893px: layout “mobile” */
+@media screen and (max-width: 893px) {
+  /* Container full-width, coluna única */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    flex-direction: column;
+  }
+
+  /* Oculta a imagem */
+  .form-image {
+    display: none;
+  }
+
+  /* Form full-width e padding reduzido */
+  .form {
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+  }
+
+  /* Cabeçalho centralizado */
+  .form-header {
+    align-items: center;
+  }
+  .form-header .title h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.75rem;
+  }
+  .login-button {
+    position: static;
+    margin: 1rem auto;
+  }
+
+  /* Inputs e opções empilhados */
+  .input-group,
+  .gender-group {
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 1.2rem;
+  }
+  .input-box,
+  .gender-input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Botão continuar full-width */
+  .continue-button button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
 }
